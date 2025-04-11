@@ -23,6 +23,7 @@ public class ChatController {
             @Payload messageHandler message,
             SimpMessageHeaderAccessor headerAccessor
     ){
+        // handling username in websocket sess
         headerAccessor.getSessionAttributes().put("username", message.getSender());
         return message;
     }
